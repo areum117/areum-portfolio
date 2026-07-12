@@ -20,9 +20,12 @@ export function HeroFlow() {
                 <p className="card-eyebrow">Profile</p>
                 <div className="profile-layout">
                     <div className="profile-media">
-                        <img className="profile-image" src={hero.image} alt="조아름 프로필" />
+                        <img
+                            className="profile-image"
+                            src={`${import.meta.env.BASE_URL}${hero.image}`}
+                            alt="프로필 이미지"
+                        />
                     </div>
-
                     <div className="profile-info">
                         <p className="card-name">{hero.name}</p>
                         <p className="card-title">{hero.label}</p>

@@ -3,7 +3,7 @@ export const hero = {
     title: "사소한 불편함이 좋은 서비스의 시작이라고 믿습니다.",
     description:
         "일상에서 느낀 불편함을 그냥 넘기지 않고,사용자가 더 편하게 입력하고, 확인하고, 이어갈 수 있는 흐름으로 바꾸는 데 관심이 있습니다.",
-    image: "/assets/profile/profile.jpg",
+    image: "assets/profile/profile.jpg",
     name: "조아름",
     education: ["동양미래대학교 컴퓨터소프트웨어공학 전공", "SK Networks Family AI Camp 수료"],
     interests: ["AI 서비스", "웹 서비스", "LLM/RAG", "UX/UI", "서비스 흐름"],
@@ -32,8 +32,7 @@ export const caseStudies = [
                 "저는 전체 서비스 흐름 중 자연어 TODO 생성과 멀티턴 AI 플래너를 중심으로, AI가 만든 결과를 사용자가 확인한 뒤 실제 서비스 데이터로 저장되도록 연결하는 부분을 맡았습니다.",
             ],
             needTitle: "캐릭터와 함께 돌아오게 만드는 생산성 서비스",
-            need:
-                "기존 생산성 앱은 할 일을 체크하는 데서 끝나 실행 동기와 성취감이 오래 이어지기 어려웠습니다. 몽글마을은 사용자의 애착인형을 캐릭터로 만들고, 그 캐릭터가 TODO를 퀘스트와 피드 기록으로 이어주면서 정서적 연결과 반복 사용 동기를 만들도록 기획한 서비스입니다.",
+            need: "기존 생산성 앱은 할 일을 체크하는 데서 끝나 실행 동기와 성취감이 오래 이어지기 어려웠습니다. 몽글마을은 사용자의 애착인형을 캐릭터로 만들고, 그 캐릭터가 TODO를 퀘스트와 피드 기록으로 이어주면서 정서적 연결과 반복 사용 동기를 만들도록 기획한 서비스입니다.",
             flowTitle: "캐릭터 생성에서 회고까지 이어지는 흐름",
             flow: [
                 "애착인형 사진과 정보로 캐릭터 생성",
@@ -239,19 +238,19 @@ export const caseStudies = [
         media: [
             {
                 type: "image",
-                src: "/assets/mongle/architecture.png",
+                src: "assets/mongle/architecture.png",
                 alt: "몽글마을 시스템 아키텍처",
                 caption: "Architecture",
             },
             {
                 type: "video",
-                src: "/assets/mongle/planner_demo.mp4",
+                src: "assets/mongle/planner_demo.mp4",
                 alt: "몽글마을 플래너 데모",
                 caption: "Planner Demo",
             },
             {
                 type: "video",
-                src: "/assets/mongle/todo_demo.mp4",
+                src: "assets/mongle/todo_demo.mp4",
                 alt: "몽글마을 TODO 데모",
                 caption: "TODO Demo",
             },
@@ -296,20 +295,17 @@ export const caseStudies = [
                 {
                     title: "문서와 데이터 검색",
                     stack: "RAG · ChromaDB · SQL Agent · MySQL",
-                    text:
-                        "근거 문서가 필요한 질문은 Chroma 기반 검색 흐름으로 연결하고, 학교나 조건처럼 정형화된 정보는 MySQL 조회 흐름으로 분리했습니다.",
+                    text: "근거 문서가 필요한 질문은 Chroma 기반 검색 흐름으로 연결하고, 학교나 조건처럼 정형화된 정보는 MySQL 조회 흐름으로 분리했습니다.",
                 },
                 {
                     title: "대화와 인터뷰 흐름",
                     stack: "LangGraph · STT/TTS · sLLM",
-                    text:
-                        "질문마다 필요한 도구가 달라질 수 있어 LangGraph 안에서 검색, DB 질의, 웹 검색 흐름을 나누고, 인터뷰는 말하고 듣는 연습 흐름으로 별도 정리했습니다.",
+                    text: "질문마다 필요한 도구가 달라질 수 있어 LangGraph 안에서 검색, DB 질의, 웹 검색 흐름을 나누고, 인터뷰는 말하고 듣는 연습 흐름으로 별도 정리했습니다.",
                 },
                 {
                     title: "웹 서비스와 실행 환경",
                     stack: "Django · FastAPI · AWS EC2/RDS · Docker · Nginx · Gunicorn",
-                    text:
-                        "웹 요청은 AWS EC2의 Django/Gunicorn에서 받고, AI 처리는 RunPod 쪽 sLLM 서비스로 넘기는 구조로 구성했습니다. 이를 통해 웹 서비스와 AI 추론 영역의 책임을 분리했습니다.",
+                    text: "웹 요청은 AWS EC2의 Django/Gunicorn에서 받고, AI 처리는 RunPod 쪽 sLLM 서비스로 넘기는 구조로 구성했습니다. 이를 통해 웹 서비스와 AI 추론 영역의 책임을 분리했습니다.",
                 },
             ],
             improvementTitle: "더 보완하고 싶은 점",
@@ -451,13 +447,13 @@ export const caseStudies = [
         media: [
             {
                 type: "image",
-                src: "/assets/visa/architecture.png",
+                src: "assets/visa/architecture.png",
                 alt: "Visa La Vista 시스템 아키텍처",
                 caption: "Architecture",
             },
             {
                 type: "image",
-                src: "/assets/visa/visa-demo.gif",
+                src: "assets/visa/visa-demo.gif",
                 alt: "Visa La Vista 서비스 시연 영상",
                 caption: "Service Demo",
             },
@@ -491,8 +487,7 @@ export const caseStudies = [
             learning:
                 "지원 정보가 많아질수록 필터와 검색 경험이 중요해지기 때문에, 이후에는 지역·조건별 탐색 흐름과 모바일 사용성을 더 다듬고 싶습니다.",
         },
-        intro:
-            "서울시 각 구의 임신·출산 지원 정보를 확인할 수 있게 만든 플랫폼의 웹 프론트엔드입니다. 앱 중심 서비스에 맞춰 웹에서도 필요한 혜택 정보를 볼 수 있도록 화면 흐름을 정리했습니다.",
+        intro: "서울시 각 구의 임신·출산 지원 정보를 확인할 수 있게 만든 플랫폼의 웹 프론트엔드입니다. 앱 중심 서비스에 맞춰 웹에서도 필요한 혜택 정보를 볼 수 있도록 화면 흐름을 정리했습니다.",
         flowTitle: "임신·출산 지원 정보를 탐색 가능한 화면으로 정리하기",
         flowNarrative:
             "사용자는 지역 또는 지원 항목을 확인하고, 목록에서 필요한 혜택을 찾은 뒤 상세 화면으로 이동합니다.",
@@ -525,8 +520,7 @@ export const caseStudies = [
             "앱 중심 서비스와 맞춰 웹 프론트엔드 화면 구성",
         ],
         problemLog: {
-            problem:
-                "서울시 각 구별 임신·출산 지원 정보는 지역과 조건에 따라 달라 한눈에 비교하기 어려웠습니다.",
+            problem: "서울시 각 구별 임신·출산 지원 정보는 지역과 조건에 따라 달라 한눈에 비교하기 어려웠습니다.",
             decision: "목록과 상세 화면을 중심으로 사용자가 필요한 정보를 이어서 확인할 수 있게 정리했습니다.",
             implementation: "React Router로 화면을 나누고, Axios 요청을 각 화면 역할에 맞게 붙였습니다.",
             result: "사용자가 웹에서도 구별 지원 정보를 확인할 수 있는 화면 흐름을 만들었습니다.",
@@ -587,11 +581,7 @@ export const caseStudies = [
             ],
             flow: ["선택지 선택", "다음 장면 생성", "JSON 응답 파싱", "상태값 업데이트", "엔딩 분기"],
             roleTitle: "직접 구현한 흐름",
-            roles: [
-                "선택 기반 다음 장면 생성",
-                "정신력·위험도·진행률 상태 관리",
-                "JSON 응답과 화면 업데이트 분리",
-            ],
+            roles: ["선택 기반 다음 장면 생성", "정신력·위험도·진행률 상태 관리", "JSON 응답과 화면 업데이트 분리"],
             learningTitle: "남은 개선점",
             learning:
                 "프로토타입 단계에서는 선택에 따라 장면이 이어지는 흐름을 확인하는 데 집중했습니다. 이후에는 JSON 오류 복구와 장기 플레이 일관성을 더 보완하고 싶습니다.",

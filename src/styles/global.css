@@ -635,6 +635,17 @@ dd {
     margin-top: 10px;
 }
 
+.main-media-section {
+    display: grid;
+    gap: 12px;
+}
+
+.main-media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
 .main-flow-steps {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -717,6 +728,28 @@ dd {
     height: clamp(230px, 24vw, 330px);
     object-fit: contain;
     padding: 12px;
+}
+
+.focus-demo-section {
+    display: grid;
+    gap: 12px;
+}
+
+.focus-demo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.focus-demo-grid .media-card:first-child {
+    grid-column: auto;
+}
+
+.focus-demo-media video,
+.focus-demo-media img,
+.focus-demo-grid .media-card:first-child video {
+    height: clamp(220px, 24vw, 340px);
+    object-fit: cover;
 }
 
 .focus-case-split {

@@ -1,5 +1,14 @@
 import { caseStudies } from "../data/portfolio";
 
+function resolveAssetPath(src: string) {
+  if (/^(https?:|mailto:|#)/.test(src)) {
+    return src;
+  }
+
+  const basePath = import.meta.env.BASE_URL;
+  return `${basePath}${src.replace(/^\/+/, "")}`;
+}
+
 export function FeaturedIsland() {
   return (
     <section className="flow-section case-section" id="cases">
@@ -12,6 +21,7 @@ export function FeaturedIsland() {
         {caseStudies.map((project) => {
           if ("mainCase" in project && project.mainCase) {
             const mainCase = project.mainCase;
+            const mainMedia = project.media ?? [];
 
             return (
               <article className="case-study case-study--main" id={`case-${project.id}`} key={project.id}>
@@ -56,6 +66,31 @@ export function FeaturedIsland() {
                     ))}
                   </section>
 
+                  {mainMedia.length > 0 ? (
+                    <section className="main-media-section" aria-label={`${project.title} 아키텍처와 데모`}>
+                      <h3>아키텍처와 데모</h3>
+                      <div className="main-media-grid">
+                        {mainMedia.map((media) => (
+                          <figure className="media-card" key={media.src}>
+                            {media.type === "video" ? (
+                              <video
+                                src={resolveAssetPath(media.src)}
+                                controls
+                                muted
+                                playsInline
+                                preload="metadata"
+                                aria-label={media.alt}
+                              />
+                            ) : (
+                              <img src={resolveAssetPath(media.src)} alt={media.alt} />
+                            )}
+                            <figcaption>{media.caption}</figcaption>
+                          </figure>
+                        ))}
+                      </div>
+                    </section>
+                  ) : null}
+
                   <div className="main-case-split">
                     <section className="main-role-card" aria-label={`${project.title} 담당 역할`}>
                       <h3>{mainCase.roleTitle}</h3>
@@ -79,6 +114,7 @@ export function FeaturedIsland() {
           if ("focusCase" in project && project.focusCase) {
             const focusCase = project.focusCase;
             const architectureMedia = project.media?.[0];
+            const demoMedia = project.media?.slice(1) ?? [];
 
             return (
               <article className="case-study case-study--focus" id={`case-${project.id}`} key={project.id}>
@@ -113,7 +149,7 @@ export function FeaturedIsland() {
                     </div>
                     {architectureMedia ? (
                       <figure className="media-card focus-architecture-media">
-                        <img src={architectureMedia.src} alt={architectureMedia.alt} />
+                        <img src={resolveAssetPath(architectureMedia.src)} alt={architectureMedia.alt} />
                         <figcaption>{architectureMedia.caption}</figcaption>
                       </figure>
                     ) : null}
@@ -123,6 +159,31 @@ export function FeaturedIsland() {
                     <h3>{focusCase.contextTitle}</h3>
                     <p>{focusCase.context}</p>
                   </section>
+
+                  {demoMedia.length > 0 ? (
+                    <section className="focus-demo-section" aria-label={`${project.title} 데모 영상`}>
+                      <h3>데모 영상</h3>
+                      <div className="focus-demo-grid">
+                        {demoMedia.map((media) => (
+                          <figure className="media-card focus-demo-media" key={media.src}>
+                            {media.type === "video" ? (
+                              <video
+                                src={resolveAssetPath(media.src)}
+                                controls
+                                muted
+                                playsInline
+                                preload="metadata"
+                                aria-label={media.alt}
+                              />
+                            ) : (
+                              <img src={resolveAssetPath(media.src)} alt={media.alt} />
+                            )}
+                            <figcaption>{media.caption}</figcaption>
+                          </figure>
+                        ))}
+                      </div>
+                    </section>
+                  ) : null}
 
                   <div className="main-case-split focus-case-split">
                     <section className="main-role-card" aria-label={`${project.title} 담당 역할`}>
